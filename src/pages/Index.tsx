@@ -5,135 +5,171 @@ import Icon from '@/components/ui/icon';
 const Index = () => {
   const socialLinks = [
     {
-      name: "Twitch",
+      name: "TWITCH",
       url: "https://twitch.tv/yourusername",
       icon: "Tv",
-      color: "from-purple-900/80 to-purple-800/80",
-      hoverColor: "hover:from-purple-800/90 hover:to-purple-700/90"
+      color: "#9146FF",
+      bgColor: "bg-purple-600/20"
     },
     {
-      name: "YouTube",
+      name: "YOUTUBE", 
       url: "https://youtube.com/@yourusername",
       icon: "Youtube",
-      color: "from-red-900/80 to-red-800/80",
-      hoverColor: "hover:from-red-800/90 hover:to-red-700/90"
+      color: "#FF0000",
+      bgColor: "bg-red-600/20"
     },
     {
-      name: "TikTok",
-      url: "https://tiktok.com/@yourusername",
+      name: "TIKTOK",
+      url: "https://tiktok.com/@yourusername", 
       icon: "Music",
-      color: "from-slate-800/80 to-slate-700/80",
-      hoverColor: "hover:from-slate-700/90 hover:to-slate-600/90"
+      color: "#FF0050",
+      bgColor: "bg-pink-600/20"
     },
     {
-      name: "Telegram",
+      name: "TELEGRAM",
       url: "https://t.me/yourusername",
-      icon: "Send",
-      color: "from-blue-900/80 to-blue-800/80",
-      hoverColor: "hover:from-blue-800/90 hover:to-blue-700/90"
+      icon: "Send", 
+      color: "#0088CC",
+      bgColor: "bg-blue-600/20"
     },
     {
-      name: "Kick",
+      name: "KICK",
       url: "https://kick.com/yourusername",
       icon: "Zap",
-      color: "from-emerald-900/80 to-emerald-800/80",
-      hoverColor: "hover:from-emerald-800/90 hover:to-emerald-700/90"
+      color: "#53FC18", 
+      bgColor: "bg-green-500/20"
     }
   ];
 
+  const Dot = ({ className = "" }: { className?: string }) => (
+    <div className={`w-2 h-2 rounded-full bg-yellow-400 animate-pulse ${className}`}></div>
+  );
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden">
-      {/* Subtle animated background elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-gaming-accent rounded-full blur-3xl animate-float"></div>
-        <div className="absolute top-40 right-32 w-24 h-24 bg-gaming-purple rounded-full blur-2xl animate-float" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-gaming-blue rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-20 right-20 w-28 h-28 bg-gaming-gray rounded-full blur-2xl animate-float" style={{animationDelay: '0.5s'}}></div>
+      {/* Pac-Man dots pattern */}
+      <div className="absolute inset-0 dot-pattern"></div>
+      
+      {/* Floating power pellets */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-20 w-4 h-4 rounded-full bg-yellow-400 animate-pulse" style={{animationDelay: '0s'}}></div>
+        <div className="absolute top-32 right-32 w-4 h-4 rounded-full bg-cyan-400 animate-pulse" style={{animationDelay: '0.5s'}}></div>
+        <div className="absolute bottom-32 left-32 w-4 h-4 rounded-full bg-magenta-400 animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-20 right-20 w-4 h-4 rounded-full bg-green-400 animate-pulse" style={{animationDelay: '1.5s'}}></div>
       </div>
 
-      <div className="max-w-md w-full z-10">
-        {/* Profile Section */}
-        <div className="text-center mb-12">
-          <div className="relative mb-6">
-            <div className="w-32 h-32 mx-auto rounded-full overflow-hidden gaming-border">
-              <img 
-                src="/img/f876faf7-efa6-4c8c-8334-3ca9777ec512.jpg" 
-                alt="Streamer Avatar"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute -top-2 -right-2 w-6 h-6 bg-gaming-accent/80 rounded-full flex items-center justify-center">
-              <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+      <div className="max-w-sm w-full z-10 relative">
+        {/* Arcade-style border */}
+        <div className="pixel-border rounded-lg p-6 mb-6">
+          {/* Profile Section */}
+          <div className="text-center mb-8">
+            <div className="relative mb-6">
+              {/* Pac-Man style avatar */}
+              <div className="w-24 h-24 mx-auto relative">
+                <div className="w-full h-full rounded-full bg-yellow-400 neon-glow relative overflow-hidden">
+                  <div className="absolute top-1/2 right-0 w-0 h-0 border-t-[12px] border-b-[12px] border-r-[20px] border-t-transparent border-b-transparent border-r-black pacman-move"></div>
+                  <img 
+                    src="/img/f876faf7-efa6-4c8c-8334-3ca9777ec512.jpg" 
+                    alt="Streamer Avatar"
+                    className="w-full h-full object-cover rounded-full opacity-80"
+                  />
+                </div>
+                {/* Online indicator */}
+                <div className="absolute -top-1 -right-1 w-6 h-6 bg-green-400 rounded-full neon-glow flex items-center justify-center">
+                  <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+                </div>
+              </div>
+              
+              <h1 className="text-2xl font-bold font-pixel neon-text mb-2 tracking-wider">
+                GAMER_STREAMER
+              </h1>
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <span className="text-cyan-400 text-sm font-pixel">LVL 99</span>
+                <span className="text-yellow-400">👾</span>
+                <span className="text-magenta-400 text-sm font-pixel">PRO</span>
+              </div>
+              <p className="text-green-400 text-xs font-pixel">
+                ARCADE • RETRO • GAMING
+              </p>
             </div>
           </div>
-          
-          <h1 className="text-4xl font-bold font-orbitron text-white gaming-text mb-2">
-            GAMER STREAMER
-          </h1>
-          <p className="text-gaming-accent/80 text-lg font-medium mb-1">
-            🎮 Pro Gaming Content
-          </p>
-          <p className="text-gray-400 text-sm">
-            Live Streaming • Adult Gaming Community
-          </p>
-        </div>
 
-        {/* Social Links */}
-        <div className="space-y-3 mb-8">
-          {socialLinks.map((link, index) => (
-            <Card key={link.name} className="overflow-hidden gaming-card">
-              <Button 
-                asChild
-                className={`w-full h-14 bg-gradient-to-r ${link.color} ${link.hoverColor} hover:scale-[1.02] transform transition-all duration-300 border-0 text-white font-semibold text-base group backdrop-blur-sm`}
-                style={{animationDelay: `${index * 0.1}s`}}
-              >
-                <a 
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-4"
+          {/* Social Links - Arcade Buttons */}
+          <div className="space-y-3 mb-6">
+            {socialLinks.map((link, index) => (
+              <Card key={link.name} className="overflow-hidden bg-black/80 border-cyan-400 border-2">
+                <Button 
+                  asChild
+                  className={`w-full h-12 arcade-button hover:scale-105 transform transition-all duration-200 text-white font-pixel text-xs group ${link.bgColor}`}
+                  style={{
+                    animationDelay: `${index * 0.1}s`,
+                    boxShadow: `0 0 10px ${link.color}40, inset 0 0 10px ${link.color}20`
+                  }}
                 >
-                  <Icon 
-                    name={link.icon as never} 
-                    size={20} 
-                    className="group-hover:scale-110 transition-transform duration-300 text-gray-200" 
-                  />
-                  <span className="group-hover:tracking-wider transition-all duration-300 text-gray-100">
-                    {link.name}
-                  </span>
-                  <Icon 
-                    name="ExternalLink" 
-                    size={16} 
-                    className="opacity-50 group-hover:opacity-80 transition-opacity duration-300 text-gray-300" 
-                  />
-                </a>
-              </Button>
-            </Card>
-          ))}
-        </div>
+                  <a 
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-3"
+                  >
+                    <Icon 
+                      name={link.icon as never} 
+                      size={16} 
+                      className="group-hover:scale-110 transition-transform duration-200" 
+                      style={{color: link.color}}
+                    />
+                    <span 
+                      className="group-hover:tracking-widest transition-all duration-200"
+                      style={{color: link.color, textShadow: `0 0 10px ${link.color}`}}
+                    >
+                      {link.name}
+                    </span>
+                    <div className="w-2 h-2 rounded-full animate-pulse" style={{backgroundColor: link.color}}></div>
+                  </a>
+                </Button>
+              </Card>
+            ))}
+          </div>
 
-        {/* Gaming Stats */}
-        <div className="grid grid-cols-4 gap-4 mb-8">
-          {[
-            { icon: "Gamepad2", label: "Gaming" },
-            { icon: "Video", label: "Streaming" },
-            { icon: "Headphones", label: "Audio" },
-            { icon: "Trophy", label: "Achievements" }
-          ].map((stat, index) => (
-            <div key={stat.label} className="text-center">
-              <div className="w-12 h-12 mx-auto bg-gaming-dark/50 rounded-lg flex items-center justify-center mb-2 border border-gaming-accent/20 hover:border-gaming-accent/40 hover:scale-110 transition-all duration-300 backdrop-blur-sm">
-                <Icon name={stat.icon as never} size={18} className="text-gaming-accent/70" />
+          {/* Pixel Stats */}
+          <div className="grid grid-cols-4 gap-3 mb-6">
+            {[
+              { icon: "Gamepad2", label: "GAMES", value: "999+" },
+              { icon: "Users", label: "FANS", value: "50K" },
+              { icon: "Trophy", label: "WINS", value: "1337" },
+              { icon: "Zap", label: "POWER", value: "MAX" }
+            ].map((stat, index) => (
+              <div key={stat.label} className="text-center">
+                <div className="w-12 h-12 mx-auto bg-black/80 border-2 border-cyan-400 rounded flex items-center justify-center mb-1 arcade-button group hover:scale-110 transition-all duration-200">
+                  <Icon name={stat.icon as never} size={16} className="text-cyan-400 group-hover:text-yellow-400 transition-colors duration-200" />
+                </div>
+                <p className="text-[8px] text-yellow-400 font-pixel mb-1">{stat.value}</p>
+                <p className="text-[6px] text-cyan-400 font-pixel">{stat.label}</p>
               </div>
-              <p className="text-xs text-gray-500 font-medium">{stat.label}</p>
+            ))}
+          </div>
+
+          {/* Retro Footer */}
+          <div className="text-center border-t-2 border-cyan-400 pt-4">
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <Dot />
+              <Dot className="delay-200" />
+              <Dot className="delay-400" />
             </div>
-          ))}
+            <p className="text-green-400 text-[10px] font-pixel tracking-wider">
+              PRESS START TO FOLLOW
+            </p>
+            <p className="text-yellow-400 text-[8px] font-pixel mt-1">
+              © 2024 RETRO GAMING
+            </p>
+          </div>
         </div>
 
-        {/* Footer */}
-        <div className="text-center">
-          <p className="text-gray-600 text-sm font-medium">
-            ⚡ Follow for epic gaming streams
-          </p>
+        {/* Power-up indicator */}
+        <div className="flex justify-center">
+          <div className="bg-black/80 border-2 border-yellow-400 rounded-full px-4 py-2 neon-glow">
+            <span className="text-yellow-400 font-pixel text-xs">POWER UP! 🔥</span>
+          </div>
         </div>
       </div>
     </div>

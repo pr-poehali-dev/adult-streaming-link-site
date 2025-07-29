@@ -123,7 +123,8 @@ export default {
 			},
 			fontFamily: {
 				orbitron: ['Orbitron', 'monospace'],
-				inter: ['Inter', 'sans-serif']
+				inter: ['Inter', 'sans-serif'],
+				pixel: ['Press Start 2P', 'monospace']
 			}
 		}
 	},

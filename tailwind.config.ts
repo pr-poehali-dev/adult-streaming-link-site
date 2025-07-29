@@ -24,6 +24,12 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				neon: {
+					cyan: '#00F5FF',
+					magenta: '#FF00FF',
+					green: '#39FF14',
+					purple: '#9D4EDD'
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -84,11 +90,38 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'neon-pulse': {
+					'0%, 100%': {
+						'box-shadow': '0 0 20px #00F5FF, 0 0 40px #00F5FF, 0 0 80px #00F5FF'
+					},
+					'50%': {
+						'box-shadow': '0 0 10px #00F5FF, 0 0 20px #00F5FF, 0 0 40px #00F5FF'
+					}
+				},
+				'glow': {
+					'0%': {
+						'text-shadow': '0 0 10px #00F5FF, 0 0 20px #00F5FF, 0 0 30px #00F5FF'
+					},
+					'100%': {
+						'text-shadow': '0 0 20px #00F5FF, 0 0 30px #00F5FF, 0 0 40px #00F5FF'
+					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite alternate',
+				'float': 'float 3s ease-in-out infinite'
+			},
+			fontFamily: {
+				orbitron: ['Orbitron', 'monospace'],
+				inter: ['Inter', 'sans-serif']
 			}
 		}
 	},

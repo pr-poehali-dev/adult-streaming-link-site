@@ -24,11 +24,13 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
-				neon: {
-					cyan: '#00F5FF',
-					magenta: '#FF00FF',
-					green: '#39FF14',
-					purple: '#9D4EDD'
+				gaming: {
+					accent: '#64FFDA',
+					purple: '#BB86FC',
+					blue: '#82B1FF',
+					gray: '#2C2C54',
+					dark: '#1A1A2E',
+					darker: '#16213E'
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',

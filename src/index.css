@@ -99,34 +99,33 @@
 
   body {
     @apply bg-background text-foreground font-inter;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
     min-height: 100vh;
   }
 
-  .neon-glow {
+  .gaming-glow {
     box-shadow:
-      0 0 20px #00f5ff,
-      0 0 40px #00f5ff,
-      0 0 80px #00f5ff;
+      0 0 10px rgba(100, 255, 218, 0.3),
+      0 0 20px rgba(100, 255, 218, 0.2);
   }
 
-  .neon-text {
-    text-shadow:
-      0 0 10px #00f5ff,
-      0 0 20px #00f5ff,
-      0 0 30px #00f5ff;
+  .gaming-text {
+    color: #64ffda;
+    text-shadow: 0 0 8px rgba(100, 255, 218, 0.4);
   }
 
   .gaming-border {
-    border: 2px solid transparent;
-    background: linear-gradient(45deg, #00f5ff, #ff00ff, #39ff14) border-box;
-    -webkit-mask:
-      linear-gradient(#fff 0 0) padding-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask:
-      linear-gradient(#fff 0 0) padding-box,
-      linear-gradient(#fff 0 0);
-    mask-composite: exclude;
+    border: 1px solid rgba(100, 255, 218, 0.3);
+    background: rgba(26, 26, 46, 0.8);
+  }
+
+  .gaming-card {
+    background: linear-gradient(
+      145deg,
+      rgba(44, 44, 84, 0.1),
+      rgba(22, 33, 62, 0.2)
+    );
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    backdrop-filter: blur(10px);
   }
 }
